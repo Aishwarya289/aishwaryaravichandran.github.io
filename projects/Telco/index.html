@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>
+      Telco Customer Churn Risk Diagnostic | Aishwarya Ravichandran
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+  <body>
+
+    <div class="project-page">
+
+
+      <!-- =====================================================
+           BACK BUTTON
+      ====================================================== -->
+
+      <a href="../../index.html" class="back-button">
+        ← All Projects
+      </a>
+
+
+      <!-- =====================================================
+           PROJECT HEADER
+      ====================================================== -->
+
+      <div class="title-row fade-up">
+
+        <h1>
+          Telco Customer Churn Risk Diagnostic
+        </h1>
+
+        <a
+          href="https://github.com/Aishwarya289/-telco-churn-risk-diagnostic"
+          target="_blank"
+          rel="noreferrer"
+          class="view-project-btn"
+        >
+          View GitHub
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+
+      </div>
+
+
+      <span class="project-date fade-up">
+        Sep 2026
+      </span>
+
+
+      <p class="project-subtitle fade-up">
+
+        End-to-end customer churn analytics project combining MySQL,
+        Python, machine learning and Power BI to identify churn drivers,
+        quantify revenue at risk and prioritise high-risk, high-value
+        customers for retention outreach.
+
+      </p>
+
+
+
+      <!-- =====================================================
+           PROJECT ARTICLE
+      ====================================================== -->
+
+      <main class="project-article">
+
+
+        <!-- =====================================================
+             1. DASHBOARD PAGE 1
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Executive Overview</h2>
+
+          <img
+            src="images/executive-overview.png"
+            alt="Telco Customer Churn Executive Overview Power BI dashboard"
+            class="screenshot-single"
+          />
+
+          <p class="screenshot-caption">
+
+            Executive overview showing total customers, overall churn rate,
+            monthly revenue at risk, average churn-risk score, customer risk
+            tiers, churn by contract type and churn by tenure band.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             2. DASHBOARD PAGE 2
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Churn Drivers Analysis</h2>
+
+          <img
+            src="images/churn-drivers.png"
+            alt="Telco Customer Churn Drivers Power BI dashboard"
+            class="screenshot-single"
+          />
+
+          <p class="screenshot-caption">
+
+            Behavioural comparison of churned and retained customers across
+            support satisfaction, recent data usage, late-payment behaviour,
+            support-ticket volume and customer-reported churn reasons.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             3. DASHBOARD PAGE 3
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Risk Segmentation &amp; Customer Explorer</h2>
+
+          <img
+            src="images/risk-segmentation.png"
+            alt="Telco Customer Churn Risk Segmentation and Customer Explorer Power BI dashboard"
+            class="screenshot-single"
+          />
+
+          <p class="screenshot-caption">
+
+            Customer-level retention view combining churn-risk scores,
+            customer lifetime value, risk tiers and interactive filters
+            to identify high-risk, high-value customers for priority outreach.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             4. BUSINESS OBJECTIVE
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Business Objective</h2>
+
+          <p>
+
+            Customer churn creates a direct revenue impact for telecom
+            providers. The objective of this project was to move beyond
+            simply reporting historical churn and develop an analytical
+            solution that helps understand where churn is concentrated,
+            what behaviours are associated with it and which customers
+            should be prioritised for retention.
+
+          </p>
+
+          <p>
+
+            The analysis focused on three key business questions:
+            which customer segments experience the highest churn,
+            which behavioural signals appear before customers leave,
+            and which currently active customers combine high churn
+            risk with high customer lifetime value.
+
+          </p>
+
+          <p>
+
+            The final solution combines relational SQL analysis,
+            behavioural feature engineering, predictive modelling
+            and interactive Power BI reporting into a single
+            end-to-end churn diagnostic workflow.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             5. DATA FOUNDATION
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Data Foundation</h2>
+
+          <p>
+
+            The base dataset contains 7,043 telecom customers with
+            demographic, account, contract, billing, churn and customer
+            lifetime value information.
+
+          </p>
+
+          <p>
+
+            Two additional datasets were created to support behavioural
+            analysis: monthly customer usage and customer support tickets.
+            These tables were linked to the customer table through a
+            customer identifier to create a relational three-table model.
+
+          </p>
+
+          <ul>
+
+            <li>
+              <strong>Customers:</strong>
+              one row per customer containing tenure, contract type,
+              monthly charges, churn status, churn score, CLTV and
+              churn reason.
+            </li>
+
+            <li>
+              <strong>Monthly Usage:</strong>
+              customer-month level records containing data usage,
+              call minutes and late-payment behaviour.
+            </li>
+
+            <li>
+              <strong>Support Tickets:</strong>
+              customer support interactions containing ticket category,
+              resolution time and satisfaction score.
+            </li>
+
+          </ul>
+
+          <p>
+
+            Monthly usage and support-ticket data were synthetically
+            generated and deliberately correlated with churn behaviour
+            to simulate realistic early-warning patterns. The predictive
+            model therefore demonstrates the analytical workflow rather
+            than production-level predictive performance on unseen
+            real-world behavioural data.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             6. KEY INSIGHTS
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Key Insights</h2>
+
+          <ul>
+
+            <li>
+
+              The overall customer churn rate was approximately
+              26.5%, representing a significant retention challenge.
+
+            </li>
+
+
+            <li>
+
+              Month-to-month customers recorded a churn rate of
+              approximately 42.7%, compared with only 2.8% for
+              customers on two-year contracts.
+
+            </li>
+
+
+            <li>
+
+              Approximately $139K in monthly revenue was associated
+              with customers who had churned, with a large proportion
+              concentrated among month-to-month customers.
+
+            </li>
+
+
+            <li>
+
+              Churn was concentrated among newer customers, with
+              customers in their first 12 months recording a churn
+              rate of approximately 47.4%.
+
+            </li>
+
+
+            <li>
+
+              Churned customers averaged approximately 20 GB of
+              recent data usage compared with around 37 GB among
+              retained customers.
+
+            </li>
+
+
+            <li>
+
+              Approximately 45.3% of churned customers experienced
+              a late payment in their final two months compared with
+              10.2% of retained customers.
+
+            </li>
+
+
+            <li>
+
+              Average support satisfaction among churned customers
+              was approximately 2.3 compared with 4.5 among retained
+              customers.
+
+            </li>
+
+
+            <li>
+
+              Product dissatisfaction, price and service dissatisfaction
+              were among the most frequently reported churn reasons.
+
+            </li>
+
+
+            <li>
+
+              The combined analysis indicates that declining usage,
+              late-payment behaviour and deteriorating support
+              satisfaction can serve as useful early-warning indicators
+              of customer churn.
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             7. BUSINESS RECOMMENDATIONS
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Business Recommendations</h2>
+
+          <ul>
+
+            <li>
+
+              Prioritise customers who combine high churn-risk scores
+              with high customer lifetime value so retention resources
+              are focused on customers with the greatest business value.
+
+            </li>
+
+
+            <li>
+
+              Target month-to-month customers with personalised loyalty,
+              contract-conversion or retention offers because this
+              segment demonstrates substantially higher churn.
+
+            </li>
+
+
+            <li>
+
+              Develop early-warning retention triggers for customers
+              showing declining usage, repeated late payments or
+              deteriorating support satisfaction.
+
+            </li>
+
+
+            <li>
+
+              Strengthen onboarding and proactive engagement during
+              the first year of the customer relationship, when churn
+              risk is highest.
+
+            </li>
+
+
+            <li>
+
+              Monitor support satisfaction and recurring customer
+              complaints to identify service issues before they result
+              in customer churn.
+
+            </li>
+
+
+            <li>
+
+              Use churn-reason analysis to design targeted retention
+              strategies addressing price concerns, product
+              dissatisfaction and service experience.
+
+            </li>
+
+
+            <li>
+
+              Use the Risk Segmentation &amp; Customer Explorer dashboard
+              to create prioritised retention lists for customer-service
+              or retention teams.
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             8. OUTCOME
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Outcome</h2>
+
+          <p>
+
+            The project transformed customer, behavioural and support
+            data into an end-to-end churn analytics solution covering
+            data preparation, relational database modelling,
+            exploratory analysis, predictive modelling and business
+            intelligence reporting.
+
+          </p>
+
+          <p>
+
+            The final Power BI solution provides three levels of
+            analysis: an executive view of churn and revenue exposure,
+            a diagnostic view of customer behaviours associated with
+            churn, and a customer-level view for retention
+            prioritisation.
+
+          </p>
+
+          <p>
+
+            The solution demonstrates how analytics can move from
+            descriptive reporting toward actionable customer
+            segmentation by combining churn probability with customer
+            lifetime value.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             9. KEY PERFORMANCE INDICATORS
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Key Performance Indicators</h2>
+
+
+          <div class="kpi-grid">
+
+
+            <div class="kpi-card">
+
+              <span class="kpi-value">
+                7,043
+              </span>
+
+              <span class="kpi-metric">
+                Customers Analysed
+              </span>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+              <span class="kpi-value">
+                26.54%
+              </span>
+
+              <span class="kpi-metric">
+                Overall Churn Rate
+              </span>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+              <span class="kpi-value">
+                $139K
+              </span>
+
+              <span class="kpi-metric">
+                Monthly Revenue at Risk
+              </span>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+              <span class="kpi-value">
+                42.7%
+              </span>
+
+              <span class="kpi-metric">
+                Month-to-Month Churn Rate
+              </span>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+              <span class="kpi-value">
+                47.4%
+              </span>
+
+              <span class="kpi-metric">
+                Churn Within First 12 Months
+              </span>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+              <span class="kpi-value">
+                0.985
+              </span>
+
+              <span class="kpi-metric">
+                Logistic Regression ROC AUC
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             10. MACHINE LEARNING MODEL
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Churn Risk Model</h2>
+
+          <p>
+
+            After aggregating customer usage and support interactions
+            to customer level, I developed a logistic regression model
+            to estimate customer churn risk.
+
+          </p>
+
+          <p>
+
+            The model used balanced class weighting to account for the
+            difference between churned and retained customers.
+
+          </p>
+
+          <ul>
+
+            <li>
+              ROC AUC: 0.985
+            </li>
+
+            <li>
+              Churn-class precision: 0.88
+            </li>
+
+            <li>
+              Churn-class recall: 0.94
+            </li>
+
+          </ul>
+
+          <p>
+
+            The strongest predictive signals included support
+            satisfaction, recent usage, tenure, late-payment rate,
+            monthly charges and support-ticket volume.
+
+          </p>
+
+          <p>
+
+            Because some behavioural variables were intentionally
+            generated with relationships to churn, these model
+            metrics should be interpreted as evidence of the modelling
+            workflow rather than expected production performance.
+
+          </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             11. APPROACH
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Approach</h2>
+
+
+          <ol>
+
+            <li>
+
+              Reviewed the original telecom customer dataset and
+              identified the demographic, account, contract,
+              billing, churn and customer-value fields required
+              for analysis.
+
+            </li>
+
+
+            <li>
+
+              Used Python and Pandas to clean and standardise the
+              customer dataset, including correcting Total Charges
+              values for zero-tenure customers.
+
+            </li>
+
+
+            <li>
+
+              Generated monthly usage and support-ticket datasets
+              to simulate customer behavioural information across
+              the customer lifecycle.
+
+            </li>
+
+
+            <li>
+
+              Designed a relational database in MySQL containing
+              customers, monthly usage and support-ticket tables
+              linked through customer identifiers.
+
+            </li>
+
+
+            <li>
+
+              Used SQL to analyse churn rates by contract type and
+              tenure, customer revenue exposure, late-payment
+              behaviour and churn reasons.
+
+            </li>
+
+
+            <li>
+
+              Aggregated monthly usage and support-ticket information
+              into customer-level features using Python.
+
+            </li>
+
+
+            <li>
+
+              Engineered behavioural variables including recent data
+              usage, late-payment rate, support-ticket volume and
+              average satisfaction.
+
+            </li>
+
+
+            <li>
+
+              Trained a logistic regression churn-risk model using
+              Scikit-learn with balanced class weighting.
+
+            </li>
+
+
+            <li>
+
+              Generated churn-risk probabilities and grouped customers
+              into risk tiers for customer segmentation.
+
+            </li>
+
+
+            <li>
+
+              Combined churn-risk scores with customer lifetime value
+              to identify high-risk, high-value customers requiring
+              priority retention attention.
+
+            </li>
+
+
+            <li>
+
+              Imported the final scored customer dataset into
+              Power BI and developed DAX measures for churn,
+              customer segmentation and revenue-risk reporting.
+
+            </li>
+
+
+            <li>
+
+              Created a three-page Power BI dashboard covering
+              Executive Overview, Churn Drivers, and Risk
+              Segmentation &amp; Customer Explorer.
+
+            </li>
+
+
+            <li>
+
+              Applied interactive filters, KPI cards, customer
+              segmentation and business storytelling principles
+              to make the final dashboard suitable for retention
+              decision-making.
+
+            </li>
+
+          </ol>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             12. SKILLS
+        ====================================================== -->
+
+        <section class="fade-up">
+
+          <h2>Skills</h2>
+
+
+          <div class="chips">
+
+            <span class="chip">
+              Python
+            </span>
+
+            <span class="chip">
+              Pandas
+            </span>
+
+            <span class="chip">
+              NumPy
+            </span>
+
+            <span class="chip">
+              Scikit-learn
+            </span>
+
+            <span class="chip">
+              MySQL
+            </span>
+
+            <span class="chip">
+              SQL
+            </span>
+
+            <span class="chip">
+              Microsoft Power BI
+            </span>
+
+            <span class="chip">
+              DAX
+            </span>
+
+            <span class="chip">
+              Data Cleaning
+            </span>
+
+            <span class="chip">
+              Data Transformation
+            </span>
+
+            <span class="chip">
+              Data Modelling
+            </span>
+
+            <span class="chip">
+              Relational Database Design
+            </span>
+
+            <span class="chip">
+              Feature Engineering
+            </span>
+
+            <span class="chip">
+              Logistic Regression
+            </span>
+
+            <span class="chip">
+              Predictive Analytics
+            </span>
+
+            <span class="chip">
+              Customer Analytics
+            </span>
+
+            <span class="chip">
+              Churn Analysis
+            </span>
+
+            <span class="chip">
+              Customer Segmentation
+            </span>
+
+            <span class="chip">
+              KPI Development
+            </span>
+
+            <span class="chip">
+              Dashboard Design
+            </span>
+
+            <span class="chip">
+              Data Visualisation
+            </span>
+
+            <span class="chip">
+              Business Intelligence
+            </span>
+
+            <span class="chip">
+              Data Storytelling
+            </span>
+
+          </div>
+
+        </section>
+
+
+      </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FADE ANIMATION
+    ====================================================== -->
+
+    <script>
+
+      const fadeObserver = new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              fadeObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.1,
+        }
+
+      );
+
+
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((element) => {
+
+          fadeObserver.observe(element);
+
+        });
+
+    </script>
+
+
+  </body>
+</html>
